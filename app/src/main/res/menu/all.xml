@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mnSearch" android:title="Series Finder"/>
+    <item android:id="@+id/mnList" android:title="Series Listing"/>
+    <item android:id="@+id/mnRandom" android:title="Random Series"/>
+</menu>
