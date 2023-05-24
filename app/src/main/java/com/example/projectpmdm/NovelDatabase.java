@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class NovelDatabase extends SQLiteOpenHelper {
 
     String sqlCreate = "CREATE TABLE if not exists Series (id INTEGER PRIMARY KEY AUTOINCREMENT , nombre TEXT NOT NULL,image BLOB NOT NULL,type TEXT NOT NULL,genre TEXT NOT NULL,author TEXT NOT NULL)";
-    String sqlChapters = "CREATE TABLE IF NOT EXISTS chapters (id INTEGER PRIMARY KEY AUTOINCREMENT ,url TEXT NOT NULL,idSeries INTEGER NOT NULL,FOREIGN KEY(idSeries) REFERENCES Series(id))";
+    String sqlChapters = "CREATE TABLE IF NOT EXISTS chapters (id INTEGER PRIMARY KEY AUTOINCREMENT ,date TEXT NOT NULL,url TEXT NOT NULL,idSeries INTEGER NOT NULL,FOREIGN KEY(idSeries) REFERENCES Series(id))";
 
 
     public NovelDatabase(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
