@@ -10,12 +10,15 @@ public class novel {
     String Genre;
     String Author;
 
-    public novel(String nombre, Blob image, String type, String genre, String author) {
+    String Lenguage;
+
+    public novel(String nombre, Blob image, String type, String genre, String author,String lenguage) {
         this.nombre = nombre;
         Image = image;
         Type = type;
         Genre = genre;
         Author = author;
+        Lenguage = lenguage;
     }
 
     public String getNombre() {
