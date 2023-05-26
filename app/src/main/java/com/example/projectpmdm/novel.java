@@ -5,14 +5,14 @@ import java.sql.Blob;
 public class novel {
 
     String nombre;
-    Blob Image;
+    String Image;
     String Type;
     String Genre;
     String Author;
 
     String Lenguage;
 
-    public novel(String nombre, Blob image, String type, String genre, String author,String lenguage) {
+    public novel(String nombre, String image, String type, String genre, String author,String lenguage) {
         this.nombre = nombre;
         Image = image;
         Type = type;
@@ -29,11 +29,11 @@ public class novel {
         this.nombre = nombre;
     }
 
-    public Blob getImage() {
+    public String getImage() {
         return Image;
     }
 
-    public void setImage(Blob image) {
+    public void setImage(String image) {
         Image = image;
     }
 
