@@ -5,19 +5,20 @@ import java.sql.Blob;
 public class novel {
 
     String nombre;
-    String Image;
+    Integer Image;
     String Type;
     String Genre;
     String Author;
-
+    Integer Rating;
     String Lenguage;
 
-    public novel(String nombre, String image, String type, String genre, String author,String lenguage) {
+    public novel(String nombre, Integer image, String type, String genre, String author,String lenguage,Integer rating) {
         this.nombre = nombre;
         Image = image;
         Type = type;
         Genre = genre;
         Author = author;
+        Rating = rating;
         Lenguage = lenguage;
     }
 
@@ -29,11 +30,11 @@ public class novel {
         this.nombre = nombre;
     }
 
-    public String getImage() {
+    public Integer getImage() {
         return Image;
     }
 
-    public void setImage(String image) {
+    public void setImage(Integer image) {
         Image = image;
     }
 
@@ -59,5 +60,21 @@ public class novel {
 
     public void setAuthor(String author) {
         Author = author;
+    }
+
+    public String getLenguage() {
+        return Lenguage;
+    }
+
+    public void setLenguage(String lenguage) {
+        Lenguage = lenguage;
+    }
+
+    public Integer getRating() {
+        return Rating;
+    }
+
+    public void setRating(Integer rating) {
+        Rating = rating;
     }
 }

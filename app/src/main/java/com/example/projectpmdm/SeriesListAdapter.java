@@ -30,22 +30,42 @@ public class SeriesListAdapter extends ArrayAdapter {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater layoutInflater = context.getLayoutInflater();
-        View fila = layoutInflater.inflate(R.layout.serielist,null);
 
-        TextView txtNombre = fila.findViewById(R.id.serieListName);
-        ImageView imgFoto = fila.findViewById(R.id.serieslistImage);
-        RatingBar rtbStar = fila.findViewById(R.id.ratingBarSeriesList);
-        TextView ratingNumber = fila.findViewById(R.id.txtRatingSeriesList);
+        View fila = convertView ;
+        ViewHolder viewHolder;
+        if (fila == null) {
+            LayoutInflater layoutInflater = context.getLayoutInflater();
+            fila = layoutInflater.inflate(R.layout.serielist,null);
+            viewHolder = new ViewHolder();
 
-        txtNombre.setText(arraynovel[position].getNombre());
-        imgFoto.setImageURI(Uri.parse(arraynovel[position].getImage()));
+            viewHolder.txtNombre = fila.findViewById(R.id.serieListName);
+            viewHolder.imgFoto = fila.findViewById(R.id.serieslistImage);
+            viewHolder.rtbStar = fila.findViewById(R.id.ratingBarSeriesList);
+            viewHolder.ratingNumber = fila.findViewById(R.id.txtRatingSeriesList);
+            fila.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) fila.getTag();
+        }
 
 
 
 
 
+        viewHolder.txtNombre.setText(arraynovel[position].getNombre());
+        viewHolder.imgFoto.setImageResource(arraynovel[position].getImage());
+        viewHolder.rtbStar.setNumStars(arraynovel[position].getRating());
+        viewHolder.ratingNumber.setText(arraynovel[position].getRating());
 
-        return super.getView(position, convertView, parent);
+
+
+
+        return fila;
+    }
+
+    private static class ViewHolder{
+        TextView    txtNombre;
+        ImageView imgFoto;
+        RatingBar rtbStar;
+        TextView ratingNumber;
     }
 }
