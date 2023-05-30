@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<novel> novelArray = new ArrayList<>();
 
+    static SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +28,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (nbd == null) {
-            nbd = new NovelDatabase(this,"NovelsApp",null,1);
+            nbd = new NovelDatabase(MainActivity.this,"NovelsApp",null,1);
         }
 
 
         novelArray.add(new novel("Lord of the Mysteries",R.drawable.imagent,"Web novel","Action","Cuttlefish that loves diving","Chinese",5));
-        novelArray.add(new novel("My House of Horrors", R.drawable.MyHouseofHorrors,"Web novel","Horror","I fix air conditioners","Chinese",5));
+        novelArray.add(new novel("My House of Horrors", R.drawable.myhouseofhorrors,"Web novel","Horror","I fix air conditioners","Chinese",5));
         novelArray.add(new novel("I Shall Seal The Heavens", R.drawable.issth,"Published novel","Xianxia","Er sen","Chinese",4));
 
 
 
 
-        SQLiteDatabase db = nbd.getWritableDatabase();
+         db = nbd.getWritableDatabase();
 
         ContentValues nSeries = null;
         for (int i = 0;i < novelArray.size();i++) {
@@ -48,10 +51,18 @@ public class MainActivity extends AppCompatActivity {
             nSeries.put("author",novelArray.get(i).getAuthor());
             nSeries.put("Lenguage",novelArray.get(i).getLenguage());
             nSeries.put("Rating",novelArray.get(i).getRating());
+            db.insert("series",null,nSeries);
         }
-
-        db.insert("Series",null,nSeries);
-
+       Cursor c = db.rawQuery("SELECT nombre FROM series",null);
+        if (c.moveToFirst()) {
+           do {
+               String n = c.getString(0);
+               Toast.makeText(this, "Nombre: " + n, Toast.LENGTH_SHORT).show();
+           } while (c.moveToNext());
+        } else {
+            Toast.makeText(this, "not exists usuarios", Toast.LENGTH_SHORT).show();
+        }
+        c.close();
 
 
 
@@ -83,4 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
