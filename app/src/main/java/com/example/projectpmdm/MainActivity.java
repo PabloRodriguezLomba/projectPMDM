@@ -32,27 +32,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        novelArray.add(new novel("Lord of the Mysteries",R.drawable.imagent,"Web novel","Action","Cuttlefish that loves diving","Chinese",5));
-        novelArray.add(new novel("My House of Horrors", R.drawable.myhouseofhorrors,"Web novel","Horror","I fix air conditioners","Chinese",5));
-        novelArray.add(new novel("I Shall Seal The Heavens", R.drawable.issth,"Published novel","Xianxia","Er sen","Chinese",4));
 
 
 
+        db = nbd.getWritableDatabase();
 
-         db = nbd.getWritableDatabase();
 
-        ContentValues nSeries = null;
-        for (int i = 0;i < novelArray.size();i++) {
-            nSeries = new ContentValues();
-            nSeries.put("nombre",novelArray.get(i).getNombre());
-            nSeries.put("img",novelArray.get(i).getImage());
-            nSeries.put("type",novelArray.get(i).getType());
-            nSeries.put("genre",novelArray.get(i).getGenre());
-            nSeries.put("author",novelArray.get(i).getAuthor());
-            nSeries.put("Lenguage",novelArray.get(i).getLenguage());
-            nSeries.put("Rating",novelArray.get(i).getRating());
-            db.insert("series",null,nSeries);
-        }
        Cursor c = db.rawQuery("SELECT nombre FROM series",null);
         if (c.moveToFirst()) {
            do {
