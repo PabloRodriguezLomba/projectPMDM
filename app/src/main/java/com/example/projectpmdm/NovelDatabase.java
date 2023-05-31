@@ -36,7 +36,7 @@ public class NovelDatabase extends SQLiteOpenHelper {
             db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Grandmaster of Demonic Cultivation',2131165412,'Web novel','Romance','Mò Xiāng Tóngxiù','Chinese',4.7)");
             db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Volcanicage',2131165414,'Web novel','wuxia','jung joon shin','Korean',4.5)");
             db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Martial World',2131165413,'Web novel','Fantasy','Cocooned Cow','Chinese',4)");
-
+            /**
             db.execSQL("INSERT INTO chapters (date,url,idSeries) VALUES(" + Calendar.getInstance().getTime().toString() + ",'https://wuxia.click/chapter/lord-of-the-mysteries-1',1)");
             db.execSQL("INSERT INTO chapters (date,url,idSeries) VALUES(" + Calendar.getInstance().getTime().toString() + ",'https://wuxia.click/chapter/lord-of-the-mysteries-2',1)");
             db.execSQL("INSERT INTO chapters (date,url,idSeries) VALUES(" + Calendar.getInstance().getTime().toString() + ",'https://wuxia.click/chapter/lord-of-the-mysteries-3',1)");
@@ -51,7 +51,8 @@ public class NovelDatabase extends SQLiteOpenHelper {
             db.execSQL("INSERT INTO chapters (date,url,idSeries) VALUES(" + Calendar.getInstance().getTime().toString() + ",'https://wuxia.click/chapter/lord-of-the-mysteries-12',1)");
             db.execSQL("INSERT INTO chapters (date,url,idSeries) VALUES(" + Calendar.getInstance().getTime().toString() + ",'https://wuxia.click/chapter/lord-of-the-mysteries-13',1)");
 
-
+            db.execSQL("INSERT INTO chapters (date,url,idSeries) VALUES(" + Calendar.getInstance().getTime().toString() + ",'https://wuxia.click/chapter/lord-of-the-mysteries-1',2)");
+        **/
         } catch (SQLException e) {
             Toast.makeText(context, "ERROR EN LA INSERCION EN LA BASE DE DATOS", Toast.LENGTH_SHORT).show();
         }

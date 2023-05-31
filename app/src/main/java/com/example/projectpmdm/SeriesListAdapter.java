@@ -54,7 +54,7 @@ public class SeriesListAdapter extends ArrayAdapter {
         viewHolder.txtNombre.setText(arraynovel[position].getNombre());
         viewHolder.imgFoto.setImageResource(arraynovel[position].getImage());
         viewHolder.rtbStar.setNumStars(arraynovel[position].getRating());
-        viewHolder.ratingNumber.setText(arraynovel[position].getRating());
+        viewHolder.ratingNumber.setText(arraynovel[position].getRating().toString());
 
 
 

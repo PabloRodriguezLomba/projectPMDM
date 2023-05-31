@@ -22,6 +22,12 @@ public class novel {
         Lenguage = lenguage;
     }
 
+    public novel(String nombre, Integer image, Integer rating) {
+        this.nombre = nombre;
+        Image = image;
+        Rating = rating;
+    }
+
     public String getNombre() {
         return nombre;
     }

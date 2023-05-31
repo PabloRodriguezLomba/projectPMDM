@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
         db = nbd.getWritableDatabase();
 
 
-       Cursor c = db.rawQuery("SELECT nombre FROM series",null);
+       Cursor c = db.rawQuery("SELECT nombre FROM series ",null);
         if (c.moveToFirst()) {
            do {
                String n = c.getString(0);
-               Toast.makeText(this, "Nombre: " + n, Toast.LENGTH_SHORT).show();
+               System.out.println(n);
            } while (c.moveToNext());
         } else {
             Toast.makeText(this, "not exists usuarios", Toast.LENGTH_SHORT).show();
