@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,9 +19,11 @@ public class MainActivity extends AppCompatActivity {
 
     NovelDatabase nbd;
 
-    ArrayList<novel> novelArray = new ArrayList<>();
+    ArrayList<chapter> chapterArrayList = new ArrayList<>();
 
     static SQLiteDatabase db;
+
+    ListView mainActivityList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,24 +34,30 @@ public class MainActivity extends AppCompatActivity {
             nbd = new NovelDatabase(MainActivity.this,"NovelsApp",null,1);
         }
 
-
+        mainActivityList = findViewById(R.id.mainActivityList);
 
 
 
         db = nbd.getWritableDatabase();
-        int id = R.drawable.lotm;
 
-       Cursor c = db.rawQuery("SELECT nombre FROM series ",null);
+
+       Cursor c = db.rawQuery("SELECT * FROM chapters ",null);
         if (c.moveToFirst()) {
            do {
-               String n = c.getString(0);
-               System.out.println(n);
+
+               String date = c.getString(1);
+               String url = c.getString(2);
+               String idSeries = c.getString(3);
+
+               chapterArrayList.add(new chapter(date,url,idSeries));
+
            } while (c.moveToNext());
         } else {
             Toast.makeText(this, "not exists usuarios", Toast.LENGTH_SHORT).show();
         }
         c.close();
 
+        chapter[] chaterArray = chapterArrayList.toArray(new chapter[0]);
 
 
 

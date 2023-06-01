@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ProjectPMDM</string>
+    <string name="genreAd">Aventura</string>
+    <string name="genreAc">Accion</string>
+    <string name="genreHr">Horror</string>
+    <string name="genreRo">Romance</string>
+    <string name="genreDr">Drama</string>
+    <string name="genreWu">Wuxia</string>
+    <string name="genreXi">Xianxia</string>
+    <string name="genreFan">Fantasia</string>
+    <string name="genreCo">Comedia</string>
+    <string name="genreHis">Historico</string>
+    <string name="TypeW">Novela web</string>
+    <string name="TypeL">Novela ligera</string>
+    <string name="TypeP">Novela publicada</string>
+    <string name="LenguageC">Chino</string>
+    <string name="LenguageK">Coreano</string>
+    <string name="LenguageE">Ingles</string>
+    <string name="LenguageJ">Japones</string>
+    <string name="LenguageEs">Español</string>
+    <string name="Search">Buscar</string>
+</resources>

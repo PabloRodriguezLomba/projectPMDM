@@ -102,11 +102,14 @@
         android:layout_marginLeft="55dp"
         />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:id="@+id/seriesChapterList"></ListView>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:id="@+id/seriesChapterList"></ListView>
+
     </LinearLayout>
+
+
 
 </ScrollView>
