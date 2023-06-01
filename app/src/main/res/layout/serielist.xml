@@ -11,7 +11,8 @@
         android:text="Lord of the Mysteries"
         android:layout_margin="20dp"
         android:textSize="20dp"
-        android:id="@+id/serieListName"/>
+        android:id="@+id/serieListName"
+        android:textColor="@color/black"/>
 
     <ImageView
         android:layout_width="200dp"

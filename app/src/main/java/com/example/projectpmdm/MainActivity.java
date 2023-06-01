@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         db = nbd.getWritableDatabase();
-
+        int id = R.drawable.lotm;
 
        Cursor c = db.rawQuery("SELECT nombre FROM series ",null);
         if (c.moveToFirst()) {

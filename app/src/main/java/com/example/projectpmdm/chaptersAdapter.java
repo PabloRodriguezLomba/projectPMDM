@@ -16,7 +16,7 @@ import androidx.annotation.Nullable;
 public class chaptersAdapter extends ArrayAdapter {
 
     Activity context;
-    private [] arraynovel;
+    private chapter[] arraynovel;
 
     public chaptersAdapter(@NonNull Activity context, int resource, @NonNull novel[] objects) {
         super(context, resource, objects);
@@ -43,7 +43,9 @@ public class chaptersAdapter extends ArrayAdapter {
         }
 
 
-        viewHolder.Date.setText(arraynovel[position].get);
+        viewHolder.Date.setText(arraynovel[position].getDate());
+        viewHolder.url.setText(arraynovel[position].getUrl());
+        viewHolder.number.setText(number);
 
 
 

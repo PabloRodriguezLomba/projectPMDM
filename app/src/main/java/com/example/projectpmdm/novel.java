@@ -9,10 +9,10 @@ public class novel {
     String Type;
     String Genre;
     String Author;
-    Integer Rating;
+    float Rating;
     String Lenguage;
 
-    public novel(String nombre, Integer image, String type, String genre, String author,String lenguage,Integer rating) {
+    public novel(String nombre, Integer image, String type, String genre, String author,String lenguage,float rating) {
         this.nombre = nombre;
         Image = image;
         Type = type;
@@ -22,7 +22,7 @@ public class novel {
         Lenguage = lenguage;
     }
 
-    public novel(String nombre, Integer image, Integer rating) {
+    public novel(String nombre, Integer image, float rating) {
         this.nombre = nombre;
         Image = image;
         Rating = rating;
@@ -76,7 +76,7 @@ public class novel {
         Lenguage = lenguage;
     }
 
-    public Integer getRating() {
+    public Float getRating() {
         return Rating;
     }
 

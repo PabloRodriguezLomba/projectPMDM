@@ -27,7 +27,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"
-        android:src="@drawable/imagent"/>
+        android:src="@drawable/imagent"
+        android:id="@+id/SeriesImg"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,6 +62,22 @@
         android:layout_marginBottom="20dp"
         android:id="@+id/txtSeriesGenre"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lenguage"
+            android:textSize="20dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Genres"
+            android:layout_marginLeft="55dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/txtSeriesLenguage"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -88,7 +105,8 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"></ListView>
+        android:layout_margin="20dp"
+        android:id="@+id/seriesChapterList"></ListView>
     </LinearLayout>
 
 </ScrollView>
