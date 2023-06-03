@@ -23,47 +23,59 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp">
+            android:layout_marginLeft="20dp"
+            android:id="@+id/groupGenre">
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/genreAc"/>
+                android:text="@string/genreAc"
+                android:id="@+id/Action"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/genreAd"/>
+                android:text="@string/genreAd"
+                android:id="@+id/Adventure"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/genreHr"/>
+                android:text="@string/genreHr"
+                android:id="@+id/Horror"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/genreCo"/>
+                android:text="@string/genreCo"
+                android:id="@+id/Comedy"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/genreRo"/>
+                android:text="@string/genreRo"
+                android:id="@+id/Romance"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/genreDr"/>
+                android:text="@string/genreDr"
+                android:id="@+id/Drama"
+                />
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/genreFan"/>
+                android:text="@string/genreFan"
+                android:id="@+id/Fantasy"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/genreHis"/>
+                android:text="@string/genreHis"
+                android:id="@+id/Historical"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/genreWu"/>
+                android:text="@string/genreWu"
+                android:id="@+id/Wuxia"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/genreXi"/>
+                android:text="@string/genreXi"
+                android:id="@+id/Xianxia"/>
 
 
 
@@ -79,20 +91,25 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp" >
+            android:layout_marginLeft="20dp"
+            android:id="@+id/groupType">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/TypeW"/>
+                android:text="@string/TypeW"
+                android:id="@+id/web"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/TypeL"/>
+                android:text="@string/TypeL"
+                android:id="@+id/light"/>
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/TypeP"/>
+                android:text="@string/TypeP"
+                android:id="@+id/published"/>
 
         </RadioGroup>
 
@@ -106,28 +123,34 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp" >
+            android:layout_marginLeft="20dp"
+            android:id="@+id/groupLenguage">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/LenguageC"/>
+                android:text="@string/LenguageC"
+                android:id="@+id/china"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/LenguageK"/>
+                android:text="@string/LenguageK"
+                android:id="@+id/Korea"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/LenguageJ"/>
+                android:text="@string/LenguageJ"
+                android:id="@+id/Japan"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/LenguageE"/>
+                android:text="@string/LenguageE"
+                android:id="@+id/England"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/LenguageEs"/>
+                android:text="@string/LenguageEs"
+                android:id="@+id/Spain"/>
 
 
         </RadioGroup>

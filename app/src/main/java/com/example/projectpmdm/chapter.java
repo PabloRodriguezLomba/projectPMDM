@@ -4,11 +4,13 @@ public class chapter {
 
     String date;
     String url;
+    String number;
     String idseries;
 
-    public chapter(String date, String url, String idseries) {
+    public chapter(String date, String url,String number, String idseries) {
         this.date = date;
         this.url = url;
+        this.number = number;
         this.idseries = idseries;
     }
 
@@ -34,5 +36,13 @@ public class chapter {
 
     public void setIdseries(String idseries) {
         this.idseries = idseries;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 }

@@ -18,6 +18,7 @@ public class ChapterAdapter extends ArrayAdapter {
     private Activity context;
     private chapter[] arrayChapters;
 
+
     public ChapterAdapter(@NonNull Activity context, int resource, @NonNull chapter[] objects) {
         super(context, resource, objects);
         this.context = context;
@@ -34,9 +35,13 @@ public class ChapterAdapter extends ArrayAdapter {
 
         TextView Date = fila.findViewById(R.id.chaptersDate);
         TextView Url = fila.findViewById(R.id.chaptersUrl);
+        TextView number = fila.findViewById(R.id.chaptersNumber);
+
 
         Date.setText(arrayChapters[position].getDate());
         Url.setText(arrayChapters[position].getUrl());
+        number.setText(arrayChapters[position].getNumber());
+
 
         return fila;
     }

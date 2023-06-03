@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,9 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
                String date = c.getString(1);
                String url = c.getString(2);
-               String idSeries = c.getString(3);
+               String idSeries = c.getString(4);
+               String number = c.getString(3);
 
-               chapterArrayList.add(new chapter(date,url,idSeries));
+               chapterArrayList.add(new chapter(date,url,number,idSeries));
 
            } while (c.moveToNext());
         } else {
@@ -59,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
         chapter[] chaterArray = chapterArrayList.toArray(new chapter[0]);
 
-
+        ChapterAdapter adapter = new ChapterAdapter(MainActivity.this,R.layout.chapters,chaterArray);
+        mainActivityList.setAdapter(adapter);
 
     }
 
@@ -78,6 +81,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 break;
             case R.id.mnRandom:
+                String nombre = "Lord of the Mysteries";
+                int random = new Random().nextInt(7) +1;
+                Cursor c = db.rawQuery("SELECT nombre FROM series where id = " + random,null);
+                if(c.moveToFirst()) {
+                    do {
+                        nombre = c.getString(0);
+                    } while (c.moveToNext());
+                }
+
+
+                Intent intent = new Intent(MainActivity.this,Series.class);
+                intent.putExtra("nombre",nombre);
+                startActivity(intent);
+
+
                 break;
             case R.id.mnSearch:
                 Intent is = new Intent(MainActivity.this,SearchSeries.class);
