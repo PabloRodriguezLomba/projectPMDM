@@ -1,10 +1,14 @@
 package com.example.projectpmdm;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -22,7 +26,7 @@ public class SeriesList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_series_list);
         seriesListList = findViewById(R.id.seriesListList);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         Cursor c = MainActivity.db.rawQuery("SELECT nombre , image,Rating FROM series",null);
         if (c.moveToFirst()) {
             do {
@@ -51,7 +55,24 @@ public class SeriesList extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.rest,menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.mnrestBack:
+                finish();
+                break;
 
 
+        }
 
+        return super.onOptionsItemSelected(item);
+    }
 }

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/mnSearch" android:title="Series Finder"/>
-    <item android:id="@+id/mnList" android:title="Series Listing"/>
-    <item android:id="@+id/mnRandom" android:title="Random Series"/>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/act_button_remind" app:showAsAction="ifRoom" android:icon="@drawable/informacion" android:title=""/>
+    <item android:id="@+id/mnSearch" android:title="@string/mnFinder"/>
+    <item android:id="@+id/mnList" android:title="@string/mnlist"/>
+    <item android:id="@+id/mnRandom" android:title="@string/mnRandom"/>
 </menu>

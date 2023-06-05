@@ -18,7 +18,8 @@
         android:layout_marginTop="30dp"
         android:id="@+id/SeriesName"
         android:text="Lord of the Mysteries"
-        android:textSize="30dp"/>
+        android:textSize="30dp"
+        android:textAlignment="center"/>
 
 
     <ImageView

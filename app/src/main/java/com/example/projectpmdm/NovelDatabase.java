@@ -15,6 +15,7 @@ public class NovelDatabase extends SQLiteOpenHelper {
 
     String sqlCreate = "CREATE TABLE if not exists series (id INTEGER PRIMARY KEY AUTOINCREMENT , nombre TEXT NOT NULL,image INTEGER NOT NULL,type TEXT NOT NULL,genre TEXT NOT NULL,author TEXT NOT NULL,Lenguage TEXT NOT NULL,Rating REAL NOT NULL)";
     String sqlChapters = "CREATE TABLE IF NOT EXISTS chapters (id INTEGER PRIMARY KEY AUTOINCREMENT ,date TEXT NOT NULL,url TEXT NOT NULL,number Integer NOT NULL,idSeries INTEGER NOT NULL,FOREIGN KEY(idSeries) REFERENCES series(id))";
+    String sqlReport = "CREATE TABLE IF NOT EXISTS report (id INTEGER PRIMARY KEY AUTOINCREMENT ,idchapter INTEGER NOT NULL,report TEXT NOT NULL,FOREIGN KEY(idchapter) REFERENCES chapters(id))";
     Calendar calendar;
     String Date;
     SimpleDateFormat simpleDateFormat;
@@ -29,6 +30,7 @@ public class NovelDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(sqlCreate);
         db.execSQL(sqlChapters);
+        db.execSQL(sqlReport);
 
         calendar = Calendar.getInstance();
         simpleDateFormat = new SimpleDateFormat("dd--MM--yyyy");
@@ -36,14 +38,14 @@ public class NovelDatabase extends SQLiteOpenHelper {
 
 
         try {
-            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Lord of the Mysteries',2131165415,'Web novel','Action','Cuttlefish that loves diving','Chinese',5)");
-            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('My House of Horrors',2131165409,'Web novel','Horror','I fix air conditioners','Chinese',5)");
-            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('I Shall Seal The Heavens',2131165408,'Web novel','Xianxia','Er sen','Chinese',4)");
-            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Circle of Inevitability',2131165410,'Web novel','Action','Cuttlefish that loves diving','Chinese',5)");
-            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Deathbound duke´s daughter',2131165411,'Light novel','Fantasy','Terasu Senoo','Japanese',4.6)");
-            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Grandmaster of Demonic Cultivation',2131165412,'Web novel','Romance','Mò Xiāng Tóngxiù','Chinese',4.7)");
-            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Volcanic age',2131165414,'Web novel','wuxia','jung joon shin','Korean',4.5)");
-            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Martial World',2131165413,'Web novel','Fantasy','Cocooned Cow','Chinese',4)");
+            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Lord of the Mysteries'," +R.drawable.lotm + ",'Web novel','Action','Cuttlefish that loves diving','Chinese',5)");
+            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('My House of Horrors',"+R.drawable.myhouseofhorrors+ ",'Web novel','Horror','I fix air conditioners','Chinese',5)");
+            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('I Shall Seal The Heavens',"+R.drawable.issth+",'Web novel','Xianxia','Er sen','Chinese',4)");
+            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Circle of Inevitability',"+R.drawable.circleofinevitability+",'Web novel','Action','Cuttlefish that loves diving','Chinese',5)");
+            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Deathbound duke´s daughter',"+R.drawable.deathbound+",'Light novel','Fantasy','Terasu Senoo','Japanese',4.6)");
+            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Grandmaster of Demonic Cultivation',"+R.drawable.gmdc+",'Web novel','Romance','Mò Xiāng Tóngxiù','Chinese',4.7)");
+            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Volcanic age',"+R.drawable.volcanicage+",'Web novel','wuxia','jung joon shin','Korean',4.5)");
+            db.execSQL("INSERT INTO series (nombre,image,type,genre,author,Lenguage,Rating) VALUES ('Martial World',"+R.drawable.martialworld+",'Web novel','Fantasy','Cocooned Cow','Chinese',4)");
 
             db.execSQL("INSERT INTO chapters (date,url,number,idSeries) VALUES('" + Date + "','https://wuxia.click/chapter/lord-of-the-mysteries-1',1,1)");
             db.execSQL("INSERT INTO chapters (date,url,number,idSeries) VALUES('" + Date + "','https://wuxia.click/chapter/lord-of-the-mysteries-2',2,1)");

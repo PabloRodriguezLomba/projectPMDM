@@ -19,4 +19,11 @@
     <string name="LenguageJ">Japanese</string>
     <string name="LenguageEs">Spanish</string>
     <string name="Search">Search</string>
+    <string name="mnFinder">Series Finder</string>
+    <string name="mnlist">Series List</string>
+    <string name="mnRandom">Random Series</string>
+    <string name="mnreadchapter">Read Chapter</string>
+    <string name="mnreport">Report Chapter</string>
+    <string name="toastReport">Report received. Thanks for Reporting</string>
+    <string name="recentlyAd">Recently added</string>
 </resources>

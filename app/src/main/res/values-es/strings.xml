@@ -19,4 +19,11 @@
     <string name="LenguageJ">Japones</string>
     <string name="LenguageEs">Español</string>
     <string name="Search">Buscar</string>
+    <string name="mnFinder">Buscador de Series</string>
+    <string name="mnlist">Listado de Series</string>
+    <string name="mnRandom">Series Aleatoria</string>
+    <string name="mnreadchapter">Leer Capítulo</string>
+    <string name="mnreport">Reportar Capítulo</string>
+    <string name="toastReport">Reporte Recibido, Gracias por la notificación</string>
+    <string name="recentlyAd">Añadido recientemente</string>
 </resources>
